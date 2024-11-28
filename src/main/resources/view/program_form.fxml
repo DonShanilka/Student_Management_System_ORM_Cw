@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="childRootNode" prefHeight="728.0" prefWidth="1150.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ProgramFormController">
+   <children>
+      <Label layoutX="387.0" layoutY="1.0" prefHeight="58.0" prefWidth="257.0" styleClass="font" stylesheets="@../css/style.css" text="Manage Programs" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="506.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="126.0" prefHeight="34.0" prefWidth="138.0" styleClass="font" stylesheets="@../css/style.css" text="PROGRAM ID:" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProgramId" layoutX="80.0" layoutY="160.0" prefHeight="34.0" prefWidth="399.0" styleClass="font" text="CA1001 " textFill="RED" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="659.0" layoutY="126.0" prefHeight="34.0" prefWidth="173.0" styleClass="font" stylesheets="@../css/style.css" text="PROGRAM NAME:" AnchorPane.rightAnchor="318.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtProgramName" layoutX="659.0" layoutY="160.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="34.0" prefWidth="391.0" styleClass="blue-box-text-field" stylesheets="@../css/style.css" AnchorPane.rightAnchor="100.0" />
+      <Label layoutX="80.0" layoutY="201.0" prefHeight="34.0" prefWidth="202.0" styleClass="font" stylesheets="@../css/style.css" text="DURATION:" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDuration" layoutX="80.0" layoutY="235.0" onKeyReleased="#txtDurationOnKeyReleased" prefHeight="34.0" prefWidth="391.0" styleClass="blue-box-text-field" stylesheets="@../css/style.css" AnchorPane.leftAnchor="80.0" />
+      <Label layoutX="659.0" layoutY="201.0" prefHeight="34.0" prefWidth="202.0" styleClass="font" stylesheets="@../css/style.css" text="FEE:" AnchorPane.rightAnchor="289.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFee" layoutX="659.0" layoutY="235.0" onKeyReleased="#txtFeeOnKeyReleased" prefHeight="34.0" prefWidth="391.0" styleClass="blue-box-text-field" stylesheets="@../css/style.css" AnchorPane.rightAnchor="100.0" />
+      <TableView fx:id="tblProgram" layoutX="80.0" layoutY="384.0" onMouseClicked="#rowOnMouseClicked" prefHeight="319.0" prefWidth="970.0" stylesheets="@../css/style.css" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="100.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="153.0" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="274.0" text="NAME" />
+            <TableColumn fx:id="colDuration" prefWidth="289.0" text="DURATION" />
+            <TableColumn fx:id="colFee" prefWidth="253.0" text="FEE" />
+         </columns>
+      </TableView>
+      <HBox layoutX="614.0" layoutY="312.0" prefHeight="42.0" prefWidth="440.0" AnchorPane.leftAnchor="614.0" AnchorPane.rightAnchor="96.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="42.0" prefWidth="100.0" style="-fx-background-color: #248f24;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="100.0" style="-fx-background-color: #007acc;" stylesheets="@../css/style.css" text="update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="145.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="42.0" prefWidth="100.0" style="-fx-background-color: #ff3300;" text="Delete " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="100.0" style="-fx-background-color: #ffcc66;" text="Clear">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
