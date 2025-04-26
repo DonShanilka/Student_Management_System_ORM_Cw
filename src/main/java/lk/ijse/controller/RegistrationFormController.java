@@ -198,7 +198,7 @@ public class RegistrationFormController {
                     txtStudentId.getText(),            // Student ID
                     cartTm.getId(),                    // Program ID
                     cartTm.getUpfrontpayment(),        // Upfront Payment
-                    txtDate.getText()                  // Date (formatted as String)
+                    datePicker.getValue()                  // Date (formatted as String)
             );
 
             // Add each RegistrationDTO to the list

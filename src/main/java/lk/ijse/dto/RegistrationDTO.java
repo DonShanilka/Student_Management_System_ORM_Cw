@@ -1,5 +1,6 @@
 package lk.ijse.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collector;
@@ -9,12 +10,12 @@ public class RegistrationDTO {
     private String sid;
     private String pid;
     private double upfrontpayment;
-    private String date;
+    private LocalDate date;
 
     public RegistrationDTO() {
     }
 
-    public RegistrationDTO(/*String rid,*/ String sid, String pid, double upfrontpayment, String date) {
+    public RegistrationDTO(/*String rid,*/ String sid, String pid, double upfrontpayment, LocalDate date) {
         //this.rid = rid;
         this.sid = sid;
         this.pid = pid;
@@ -54,11 +55,11 @@ public class RegistrationDTO {
         this.upfrontpayment = upfrontpayment;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

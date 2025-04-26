@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -25,14 +26,14 @@ public class Registration {
 
    @OneToOne
    private Payment payment;
-   private String date;
+   private LocalDate date;
 //   private double totalPayment;
 
     public Registration() {
 
     }
 
-    public Registration(/*int rId,*/ Student student, Program program, double upfrontpayment, Payment payment, String date /*,double totalPayment*/) {
+    public Registration(/*int rId,*/ Student student, Program program, double upfrontpayment, Payment payment, LocalDate date /*,double totalPayment*/) {
         //this.rId = rId;
         this.student = student;
         this.program = program;
@@ -83,11 +84,11 @@ public class Registration {
         this.payment = payment;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String  date) {
+    public void setDate(LocalDate  date) {
         this.date = date;
     }
 

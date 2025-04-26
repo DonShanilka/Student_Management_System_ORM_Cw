@@ -28,7 +28,7 @@ public class RegistrationBOImpl implements RegistrationBO {
         Transaction transaction = session.beginTransaction();
        // boolean isUpdated =false;
         List<Registration> registrationList = new ArrayList<>();
-        boolean isRegistrationSaved =false;
+        boolean isRegistrationSaved = false;
 
         try{
             for (RegistrationDTO registrationDTO : registrationDTOList) {
@@ -51,33 +51,7 @@ public class RegistrationBOImpl implements RegistrationBO {
                     paymentDAO.savePayment(payment,session);
 
                 }
-
             }
-           /* Registration registration =  new Registration();
-            Orders order = new Orders(orderDTO.getoId(),orderDTO.getDate(),orderDTO.getCustomer());
-            System.out.println(order);
-            boolean isSaved = orderDAO.save(order,session);
-            if(isSaved){
-                List<OrderDetails> orderDetails1 = new ArrayList<>();
-                for (OrderDetailDTO orderDetail: orderDetails ){
-                    Item item1 = new Item();
-                    item1.setiId(orderDetail.getiId());
-                    System.out.println(item1);
-
-                    isUpdated = itemDAO.updateQty(item1,orderDetail.getQty(),session);
-
-                    orderDetails1.add(new OrderDetails(order,item1,orderDetail.getQty()));
-                }
-
-                if (isUpdated) {
-                    orderDetailDAO.save(orderDetails1,session);
-                    transaction.commit();
-                    new Alert(Alert.AlertType.CONFIRMATION,"transaction completed").show();
-
-                }
-
-
-            }*/
 
             transaction.commit();
             new Alert(Alert.AlertType.CONFIRMATION,"transaction completed").show();
